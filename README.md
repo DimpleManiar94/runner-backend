@@ -45,7 +45,7 @@ Change the user and password to your mac user and password.
 13. `python3 manage.py migrate`
 14. `python3 manage.py runserver`
 15. On your browser go to `localhost:8000`. You should see rest framework
-16. `localhost:8000\admin` will give you django administration.
+16. `localhost:8000/admin` will give you django administration.
 
 
 

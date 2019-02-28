@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'tasks',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -82,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'djangorunner',
         'USER': 'dimple',
-        'PASSWORD': '***********',
+        'PASSWORD': 'flowerpot',
         'HOST': '127.0.0.1',
         'PORT': '5432'
     }

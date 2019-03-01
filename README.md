@@ -21,8 +21,8 @@ Python, Django, Postgresql
 5. Check django version:\
 `python3 -m django --version`\
 should give you 2.1.5
-6. Download and install postgres
-`https://postgresapp.com/downloads.html`
+6. Install postgres\
+`brew install postgresql`
 7. Create runner database in postgres from command line\
 `createdb djangorunner`\
 This will create a database called `djangorunner` in postgres and we later connect to this db from our python project.

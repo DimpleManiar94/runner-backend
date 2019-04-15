@@ -3,13 +3,13 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 class UserAccount(AbstractUser):
-    Phone = models.CharField(max_length=10)
+    Phone = models.CharField(max_length=10, blank=True)
     ProfilePicture = models.CharField(max_length=300, blank=True)
-    Addr1 = models.CharField(max_length=200)
+    Addr1 = models.CharField(max_length=200, blank=True)
     Addr2 = models.CharField(max_length=200, blank=True)
-    City = models.CharField(max_length=50)
-    State = models.CharField(max_length=50)
-    PostalCode = models.CharField(max_length=10)
+    City = models.CharField(max_length=50, blank=True)
+    State = models.CharField(max_length=50, blank=True)
+    PostalCode = models.CharField(max_length=10, blank=True)
 
 class Setting(models.Model):
     SETTINGS_TYPE = (

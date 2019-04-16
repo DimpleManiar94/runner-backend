@@ -20,6 +20,7 @@ from django.contrib import admin
 
 router = routers.DefaultRouter()
 router.register('user', views.UserAccountView)
+router.register('register', views.UserRegistrationView)
 
 urlpatterns = [
     path('', include(router.urls)),

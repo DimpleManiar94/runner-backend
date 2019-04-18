@@ -1,5 +1,5 @@
 from django.db import models
-from accounts.models import UserAccount
+from accounts.models import User
 
 # Create your models here.
 class Task(models.Model):
@@ -26,8 +26,8 @@ class Task(models.Model):
     PostalCode = models.CharField(max_length=10)
     TaskType = models.CharField(max_length=10, choices=TASK_TYPES)
     TaskStatus = models.CharField(max_length=10, choices=TASK_STATUSES)
-    AuthorFK = models.ForeignKey(UserAccount, related_name='author', on_delete=models.CASCADE, null=True)
-    RunnerFK = models.ForeignKey(UserAccount, related_name='runner', on_delete=models.CASCADE, null=True, blank=True)
+    AuthorFK = models.ForeignKey(User, related_name='author', on_delete=models.CASCADE, null=True)
+    RunnerFK = models.ForeignKey(User, related_name='runner', on_delete=models.CASCADE, null=True, blank=True)
     CreatedTS = models.DateTimeField(auto_now_add=True)
     UpdatedTS = models.DateTimeField(auto_now=True)
 
@@ -36,7 +36,7 @@ class Task(models.Model):
 
 class TaskComment(models.Model):
     Comment = models.CharField(max_length=1200)
-    UserFK = models.ForeignKey(UserAccount, related_name='Comment_User', on_delete=models.CASCADE, null=True)
+    UserFK = models.ForeignKey(User, related_name='Comment_User', on_delete=models.CASCADE, null=True)
     TaskFK = models.ForeignKey(Task, related_name='Comment_Task', on_delete=models.CASCADE, null=True)
     CreatedTS = models.DateTimeField(auto_now_add=True)
     UpdatedTS = models.DateTimeField(auto_now=True)
@@ -45,7 +45,7 @@ class TaskComment(models.Model):
         return self.Comment
 
 class TaskLike(models.Model):
-    UserFK = models.ForeignKey(UserAccount, related_name='Like_user', on_delete=models.CASCADE, null=True)
+    UserFK = models.ForeignKey(User, related_name='Like_user', on_delete=models.CASCADE, null=True)
     TaskFK = models.ForeignKey(Task, related_name='Like_task', on_delete=models.CASCADE, null=True)
 
 

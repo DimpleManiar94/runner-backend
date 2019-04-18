@@ -1,8 +1,11 @@
+from builtins import super
+
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User
 
 # Create your models here.
-class UserAccount(AbstractUser):
+class UserAccount(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     Phone = models.CharField(max_length=10, blank=True)
     ProfilePicture = models.CharField(max_length=300, blank=True)
     Addr1 = models.CharField(max_length=200, blank=True)

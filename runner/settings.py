@@ -29,6 +29,8 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'auth.User'
 
+USE_TZ = True
+
 
 # Application definition
 

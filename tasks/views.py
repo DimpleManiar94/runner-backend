@@ -6,7 +6,7 @@ from .serializers import TaskSerializer, TaskCommentSerializer
 # Create your views here.
 
 class TaskView(viewsets.ModelViewSet):
-    queryset = Task.objects.all()
+    queryset = Task.objects.all().order_by('-CreatedTS')
     serializer_class = TaskSerializer
 
 class TaskCommentView(viewsets.ModelViewSet):

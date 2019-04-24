@@ -7,6 +7,10 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'username', 'first_name', 'last_name', 'email', 'password')
+        extra_kwargs = {
+            'username': {'validators': []},
+        }
+
 
 class UserAccountSerializer(serializers.ModelSerializer):
     user = UserSerializer(required=True)
@@ -24,11 +28,11 @@ class UserAccountSerializer(serializers.ModelSerializer):
         user_dict = validated_data.pop('user', None)
         if user_dict:
             user_obj = instance.user
-            for key, value in user_dict.iteritems():
+            for key, value in user_dict.items():
                 setattr(user_obj, key, value)
             user_obj.save()
             validated_data["user"] = user_obj
-        for key, value in validated_data.iteritems():
+        for key, value in validated_data.items():
             setattr(instance, key, value)
         instance.save()
         return instance

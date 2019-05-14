@@ -18,7 +18,7 @@ from . import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register('task', views.TaskView)
+router.register('task', views.TaskView, base_name='Task')
 
 urlpatterns = [
     path('', include(router.urls)),

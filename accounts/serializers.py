@@ -36,17 +36,3 @@ class UserAccountSerializer(serializers.ModelSerializer):
             setattr(instance, key, value)
         instance.save()
         return instance
-
-
-    """def update(self, instance, validated_data):
-       user_dict = validated_data.pop('user', None)
-       if user_dict:
-           user_obj = instance.user
-           for key, value in user_dict.iteritems():
-                setattr(user_obj, key, value)
-           user_obj.save()
-           validated_data["user"] = user_obj
-       for key, value in validated_data.iteritems():
-           setattr(instance, key, value)
-       instance.save()
-       return instance"""

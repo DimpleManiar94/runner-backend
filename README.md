@@ -41,6 +41,7 @@ DATABASES = {\
 Change the user and password to your mac user and password.
 10. Now go to the command line and cd into the project.
 11. `pip3 install djangorestframework`
+12. `pip3 install django-filter`
 12. `python3 manage.py makemigrations`
 13. `python3 manage.py migrate`
 14. `python3 manage.py runserver`
